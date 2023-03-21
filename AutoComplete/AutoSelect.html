@@ -1,0 +1,23 @@
+<div id="auto-select" class="form-outline">
+    <input type="text" id="form1" class="form-control" />
+    <label class="form-label" for="form1">Example label</label>
+</div>
+
+
+
+
+<script>
+
+    const autoSelectAutocomplete = document.querySelector('#auto-select');
+    const data = ['One', 'Two', 'Three', 'Four', 'Five'];
+    const dataFilter = (value) => {
+        return data.filter((item) => {
+            return item.toLowerCase().startsWith(value.toLowerCase());
+        });
+    };
+
+    new mdb.Autocomplete(autoSelectAutocomplete, {
+        filter: dataFilter,
+        autoSelect: true
+    });
+</script>

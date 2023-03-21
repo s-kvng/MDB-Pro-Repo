@@ -1,0 +1,45 @@
+
+<!-- Custom content
+A custom content container with a class .autocomplete-custom-content will be 
+displayed at the end of the autocomplete-custom-item-subtitle dropdown. 
+You can use it to display a number of search results. -->
+
+<div id="customContent" class="form-outline">
+    <input type="text" id="form16" class="form-control" />
+    <label class="form-label" for="form1">Example label</label>
+    <div class="autocomplete-custom-content"></div>
+</div>
+
+
+<style>
+    .autocomplete-custom-content {
+        padding: 6.5px 16px;
+    }
+</style>
+
+<script>
+
+    const customContentAutocomplete = document.querySelector('#customContent');
+    const data = ['One', 'Two', 'Three', 'Four', 'Five'];
+    const dataFilter = (value) => {
+        return data.filter((item) => {
+            return item.toLowerCase().startsWith(value.toLowerCase());
+        });
+    };
+
+    new mdb.Autocomplete(customContent, {
+        filter: dataFilter,
+        customContent: `
+    <div class="autocomplete-custom-content"></div>
+  `,
+    });
+
+    customContent.addEventListener('update.mdb.autocomplete', (event) => {
+        const resultsLength = event.results.length;
+
+        setTimeout(() => {
+            customContentContainer = document.querySelector('.autocomplete-custom-content');
+            customContentContainer.innerHTML = `Search results: ${resultsLength}`;
+        }, 0);
+    });
+</script>

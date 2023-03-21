@@ -1,0 +1,59 @@
+
+<!-- Custom item template
+The itemContent option allow to display custom HTML in the result list. 
+You can use the listHeight option to modify the result list height when 
+you want to display more content in the component dropdown. -->
+
+
+<div id="customItem" class="form-outline" data-mdb-list-height="290">
+    <input type="text" id="form14" class="form-control" />
+    <label class="form-label" for="form1">Example label</label>
+</div>
+
+
+<style>
+
+    .autocomplete-custom-item-content {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .autocomplete-custom-item-title {
+        font-weight: 500;
+      }
+      
+      .autocomplete-custom-item-subtitle {
+        font-size: 0.8rem;
+      }
+</style>
+
+<script>
+
+    const customItemAutocomplete = document.querySelector('#customItem');
+    const data = [
+        { title: 'One', subtitle: 'Secondary text' },
+        { title: 'Two', subtitle: 'Secondary text' },
+        { title: 'Three', subtitle: 'Secondary text' },
+        { title: 'Four', subtitle: 'Secondary text' },
+        { title: 'Five', subtitle: 'Secondary text' },
+        { title: 'Six', subtitle: 'Secondary text' },
+    ];
+    const dataFilter = (value) => {
+        return data.filter((item) => {
+            return item.title.toLowerCase().startsWith(value.toLowerCase());
+        });
+    };
+
+    new mdb.Autocomplete(customItem, {
+        filter: dataFilter,
+        displayValue: (value) => value.title,
+        itemContent: (result) => {
+            return `
+      <div class="autocomplete-custom-item-content">
+        <div class="autocomplete-custom-item-title">${result.title}</div>
+        <div class="autocomplete-custom-item-subtitle">${result.subtitle}</div>
+      </div>
+    `;
+        },
+    });
+</script>

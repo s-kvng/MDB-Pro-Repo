@@ -1,0 +1,33 @@
+<!-- Validation
+The input value is automatically validated to ensure that it is a properly formatted email address. -->
+
+
+
+<form class="needs-validation" novalidate style="width: 22rem;">
+    <div id="validation" class="form-outline">
+        <input type="text" id="form6" class="form-control" required />
+        <label class="form-label" for="form6">Example label</label>
+        <div class="valid-feedback">Looks good!</div>
+        <div class="invalid-feedback">Input value is required</div>
+    </div>
+
+    <button type="submit" id="submit" class="btn btn-primary btn-sm mt-3">
+        Submit
+    </button>
+</form>
+
+
+<script>
+
+    const validationAutocomplete = document.querySelector('#validation');
+    const data = ['One', 'Two', 'Three', 'Four', 'Five'];
+    const dataFilter = (value) => {
+        return data.filter((item) => {
+            return item.toLowerCase().startsWith(value.toLowerCase());
+        });
+    };
+
+    new mdb.Autocomplete(validationAutocomplete, {
+        filter: dataFilter
+    });
+</script>

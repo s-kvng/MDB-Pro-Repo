@@ -1,0 +1,28 @@
+<!-- Asynchronous search
+The function passed to the filter option can return a Promise that 
+resolves to an array of results. By default the component expects 
+to receive data as an array of strings. If you want to return an array 
+of objects instead, you can use displayValue option to specify which 
+parameter should be used as a display value of the specific result. -->
+
+<div id="async" class="form-outline autocomplete">
+    <input type="text" id="form2" class="form-control" />
+    <label class="form-label" for="form2">Example label</label>
+</div>
+
+
+<script>
+
+    const asyncAutocomplete = document.querySelector('#async');
+    const asyncFilter = async (query) => {
+        const url = `https://swapi.py4e.com/api/people/?search=${encodeURI(query)}`;
+        const response = await fetch(url);
+        const data = await response.json();
+        return data.results;
+    };
+
+    new mdb.Autocomplete(asyncAutocomplete, {
+        filter: asyncFilter,
+        displayValue: (value) => value.name
+    });
+</script>

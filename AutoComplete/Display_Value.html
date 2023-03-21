@@ -1,0 +1,32 @@
+<!-- The displayValue option allow to separate oryginal result value from the value 
+    that will be displayed in the result list or input (after selection). 
+    Its useful when the data returned by the filter function is an array of objects.
+     You can specify which parameter of the object should be displayed. -->
+
+<div id="displayValue" class="form-outline">
+    <input type="text" id="form13" class="form-control" />
+    <label class="form-label" for="form1">Example label</label>
+    <div class="autocomplete-custom-content"></div>
+</div>
+
+
+<script>
+    const displayValueAutocomplete = document.querySelector('#displayValue');
+    const data = [
+        { title: 'One', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit' },
+        { title: 'Two', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit' },
+        { title: 'Three', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit' },
+        { title: 'Four', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit' },
+        { title: 'Five', description: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit' }
+    ];
+    const dataFilter = (value) => {
+        return data.filter((item) => {
+            return item.title.toLowerCase().startsWith(value.toLowerCase());
+        });
+    };
+
+    new mdb.Autocomplete(displayValueAutocomplete, {
+        filter: dataFilter,
+        displayValue: (value) => value.title,
+    });
+</script>

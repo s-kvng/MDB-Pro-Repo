@@ -1,0 +1,25 @@
+<!-- The filter option is required in order for component to work properly. 
+    The option accepts a function that is expected to return an array of results
+     or a Promise that resolves to an array of results. -->
+
+<div id="basic" class="form-outline">
+    <input type="text" id="form11" class="form-control" />
+    <label class="form-label" for="form1">Example label</label>
+</div>
+
+
+<script>
+
+    const basicAutocomplete = document.querySelector('#basic');
+    const data = ['One', 'Two', 'Three', 'Four', 'Five'];
+    const dataFilter = (value) => {
+        return data.filter((item) => {
+            return item.toLowerCase().startsWith(value.toLowerCase());
+        });
+    };
+
+    new mdb.Autocomplete(basicAutocomplete, {
+        filter: dataFilter
+    });
+
+</script>
