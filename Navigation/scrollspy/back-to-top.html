@@ -1,0 +1,67 @@
+
+<!-- When your page is very long you may want to give your users an option to quickly scroll back to the top of the page. In such cases the best solution is to add a button that will appear after the user scrolls a specified number of pixels.
+
+You can specify when the button appears by changing the condition set in the JavaScript code below, document.body.scrollTop for older browsers and document.documentElement.scrollTop for new ones. In the example we've set this to 20 pixels but you may increase this value if you want your button to appear later.
+
+We recommend using this component along with the Smooth scroll functionality. -->
+
+
+<style>
+
+    #btn-back-to-top {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        display: none;
+        }
+</style>
+
+
+<!-- Back to top button -->
+<button type="button" class="btn btn-danger btn-floating btn-lg" id="btn-back-to-top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+  
+  <!-- Explanation -->
+  <div class="container mt-4 text-center" style="height: 2000px;">
+    <p>
+      Start scrolling the page and a strong
+      <strong>"Back to top" button </strong> will appear in the
+      <strong>bottom right corner</strong> of the screen.
+    </p>
+  
+    <p>
+      Click this button and you will be taken to the top of the page.
+    </p>
+  </div>
+
+
+
+  <script>
+
+    //Get the button
+let mybutton = document.getElementById("btn-back-to-top");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+scrollFunction();
+};
+
+function scrollFunction() {
+if (
+document.body.scrollTop > 20 ||
+document.documentElement.scrollTop > 20
+) {
+mybutton.style.display = "block";
+} else {
+mybutton.style.display = "none";
+}
+}
+// When the user clicks on the button, scroll to the top of the document
+mybutton.addEventListener("click", backToTop);
+
+function backToTop() {
+document.body.scrollTop = 0;
+document.documentElement.scrollTop = 0;
+}
+  </script>

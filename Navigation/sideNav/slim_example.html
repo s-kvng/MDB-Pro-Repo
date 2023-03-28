@@ -1,0 +1,85 @@
+<!-- Slim example
+You can hide/show elements in the slim mode by setting 
+data-mdb-slim attribute on them - depending on value they will be 
+either visible only in a slim or an expanded mode. Elements without this attribute
+ will appear in both modes. -->
+
+
+<!-- Sidenav-->
+<nav
+  id="sidenav-4"
+  class="sidenav"
+  data-mdb-mode="side"
+  data-mdb-slim="true"
+  data-mdb-slim-collapsed="true"
+  data-mdb-content="#slim-content"
+>
+  <ul class="sidenav-menu">
+    <li class="sidenav-item">
+      <a class="sidenav-link">
+        <i class="far fa-smile me-3"></i
+        ><span data-mdb-slim="false">Link 1</span></a
+      >
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link"
+        ><i class="fas fa-grin me-3"></i
+        ><span data-mdb-slim="false">Category 1</span></a
+      >
+      <ul class="sidenav-collapse">
+        <li class="sidenav-item">
+          <a class="sidenav-link">Link 2</a>
+        </li>
+        <li class="sidenav-item">
+          <a class="sidenav-link">Link 3</a>
+        </li>
+      </ul>
+    </li>
+    <li class="sidenav-item">
+      <a class="sidenav-link"
+        ><i class="fas fa-grin-wink me-3"></i
+        ><span data-mdb-slim="false">Category 2</span></a
+      >
+      <ul class="sidenav-collapse">
+        <li class="sidenav-item">
+          <a class="sidenav-link">Link 4</a>
+        </li>
+        <li class="sidenav-item">
+          <a class="sidenav-link">Link 5</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+<!-- Sidenav-->
+
+<!-- Togglers -->
+<div id="slim-content">
+  <button
+    data-mdb-toggle="sidenav"
+    data-mdb-target="#sidenav-4"
+    class="btn btn-primary"
+    aria-controls="#sidenav-4"
+    aria-haspopup="true"
+  >
+    <i class="fas fa-bars"></i>
+  </button>
+  <button id="slim-toggler" class="btn btn-primary">
+    Toggle slim
+  </button>
+</div>
+<!-- Togglers -->
+
+
+
+<script>
+
+    //Use show() method to make it instantly visible
+const slimInstance = mdb.Sidenav.getInstance(document.getElementById('sidenav-4'));
+
+slimInstance.show();
+
+document.getElementById('slim-toggler').addEventListener('click', () => {
+  slimInstance.toggleSlim();
+})
+</script>

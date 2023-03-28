@@ -1,0 +1,63 @@
+<div class="d-flex">
+    <div class="card" style="width: 18rem;">
+      <ul id="example-list" class="list-group list-group-flush">
+        <li class="list-group-item">Cras justo odio</li>
+        <li class="list-group-item">Dapibus ac facilisis in</li>
+        <li class="list-group-item">Vestibulum at eros</li>
+      </ul>
+    </div>
+    <div class="ms-3">
+      <button class="btn btn-primary" id="add">add</button>
+    </div>
+  </div>
+
+
+  <script>
+
+    let elementNumber = 1;
+const bindRemoveClickEvent = (el) => {
+  const element = el;
+
+  element.addEventListener('click', () => {
+    const prevElement = element.previousElementSibling ? element.previousElementSibling : element;
+    const animation = element === prevElement ? 'fade-out' : 'slide-out-up';
+
+    prevElement.style.zIndex = '1';
+
+    element.addEventListener('animationend', () => {
+      element.remove();
+      prevElement.style.zIndex = '0';
+    });
+
+    element.classList.add('animation', 'faster', animation);
+  });
+};
+
+const addNewOption = () => {
+  const element = document.getElementById('example-list');
+  const newElement = document.createElement('li');
+  const lastElement = element.lastElementChild || element;
+  const animation = element === lastElement ? 'fade-in' : 'slide-in-down';
+
+  newElement.innerText = `element ${elementNumber}`;
+  lastElement.style.zIndex = '1';
+  newElement.classList.add('list-group-item', 'animation', 'faster', animation);
+
+  newElement.addEventListener('animationend', () => {
+    lastElement.style.zIndex = '0';
+    newElement.classList.remove('animation', 'faster', animation);
+  });
+
+  bindRemoveClickEvent(newElement);
+  element.appendChild(newElement);
+  elementNumber += 1;
+};
+
+document.querySelectorAll('#example-list li').forEach((el) => {
+  bindRemoveClickEvent(el);
+});
+
+document.getElementById('add').addEventListener('click', () => {
+  addNewOption();
+});
+  </script>

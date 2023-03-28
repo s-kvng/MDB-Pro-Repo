@@ -1,0 +1,93 @@
+<!-- On load -->
+<i
+  data-mdb-toggle="animation"
+  data-mdb-animation="zoom-in"
+  data-mdb-animation-start="onLoad"
+  class="fas fa-car-side fa-3x"
+></i>
+
+
+<!-- On hover -->
+<i
+  data-mdb-toggle="animation"
+  data-mdb-animation-start="onHover"
+  data-mdb-animation-reset="true"
+  data-mdb-animation="slide-right"
+  class="fas fa-car-side fa-3x"
+></i>
+
+
+<!-- Manually -->
+<i
+  data-mdb-toggle="animation"
+  data-mdb-animation="zoom-in"
+  data-mdb-animation-start="onLoad"
+  class="fas fa-car-side fa-3x"
+></i>
+
+
+<!-- On Scroll -->
+<i
+  data-mdb-toggle="animation"
+  data-mdb-animation-start="onScroll"
+  data-mdb-animation="slide-in-left"
+  class="fas fa-car-side fa-3x"
+></i>
+
+
+<!-- Repeat Animation on scroll -->
+<i
+  data-mdb-toggle="animation"
+  data-mdb-animation-start="onScroll"
+  data-mdb-animation-on-scroll="repeat"
+  data-mdb-animation="slide-in-left"
+  class="fas fa-car-side fa-3x"
+></i>
+
+
+<!-- show on load -->
+<i
+  data-mdb-toggle="animation"
+  data-mdb-animation-start="onScroll"
+  data-mdb-animation-on-scroll="repeat"
+  data-mdb-animation-show-on-load="false"
+  data-mdb-animation="slide-in-left"
+  class="fas fa-car-side fa-3x"
+></i>
+
+
+<!-- Launch via external element -->
+<div class="d-flex justify-content-around">
+    <div>
+      <button
+        class="btn btn-primary me-5"
+        data-mdb-toggle="animation"
+        data-mdb-animation-target="#animate-click"
+      >
+        Animation on Click
+      </button>
+      <i
+        id="animate-click"
+        data-mdb-animation="slide-out-right"
+        data-mdb-animation-start="onClick"
+        data-mdb-animation-reset="true"
+        class="fas fa-car-side fa-3x"
+      ></i>
+    </div>
+    <div>
+      <button
+        class="btn btn-primary me-5"
+        data-mdb-toggle="animation"
+        data-mdb-animation-target="#animate-hover"
+      >
+        Animation on Hover
+      </button>
+      <i
+        id="animate-hover"
+        data-mdb-animation="slide-out-right"
+        data-mdb-animation-start="onHover"
+        data-mdb-animation-reset="true"
+        class="fas fa-car-side fa-3x"
+      ></i>
+    </div>
+  </div>
