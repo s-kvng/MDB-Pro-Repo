@@ -1,0 +1,172 @@
+
+<style>
+
+    body {
+        background-color: hsl(0, 0%, 98%);
+      }
+</style>
+
+<!-- Container for demo purpose -->
+<div class="container my-5 py-5">
+
+    <!--Section: Design Block-->
+    <section class="mb-8">
+  
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <select class="select">
+                <option value="1">Product 1</option>
+                <option value="2">Product 2</option>
+                <option value="3">Product 3</option>
+                <option value="4">Product 4</option>
+                <option value="5">Product 5</option>
+              </select>
+              <label class="form-label select-label">Product</label>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-8 mb-4">
+          <div class="card">
+            <div class="card-body">
+              <div class="row">
+                <div class="col-md-6 mb-4 mb-md-0">
+                  <select class="select">
+                    <option value="1">Today</option>
+                    <option value="2">Yesterday</option>
+                    <option value="3" selected>Last 7 days</option>
+                    <option value="4">Last 28 days</option>
+                    <option value="5">Last 90 days</option>
+                  </select>
+                  <label class="form-label select-label">Date</label>
+                </div>
+  
+                <div class="col-md-6">
+                  <div class="form-outline datepicker">
+                    <input type="text" class="form-control" id="exampleDatepicker1" value="Custom date"
+                      data-toggle="datepicker" />
+                    <label for="exampleDatepicker1" class="form-label">Date</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="card mb-4">
+        <div class="card-header text-center py-3 bg-light border-0">
+          <strong>Sales Performance KPIs</strong>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-hover text-nowrap">
+              <thead>
+                <tr>
+                  <th scope="col"></th>
+                  <th scope="col">Product Detail Views</th>
+                  <th scope="col">Unique Purchases</th>
+                  <th scope="col">Quantity</th>
+                  <th scope="col">Product Revenue</th>
+                  <th scope="col">Avg. Price</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">Value</th>
+                  <td>18,492</td>
+                  <td>228</td>
+                  <td>350</td>
+                  <td>$4,787.64</td>
+                  <td>$13.68</td>
+                </tr>
+                <tr>
+                  <th scope="row">Percentage change</th>
+                  <td>
+                    <span class="text-danger">
+                      <i class="fas fa-caret-down me-1"></i><span>-48.8%%</span>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="text-success">
+                      <i class="fas fa-caret-up me-1"></i><span>14.0%</span>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="text-success">
+                      <i class="fas fa-caret-up me-1"></i><span>46.4%</span>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="text-success">
+                      <i class="fas fa-caret-up me-1"></i><span>29.6%</span>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="text-danger">
+                      <i class="fas fa-caret-down me-1"></i><span>-11.5%</span>
+                    </span>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope="row">Absolute change</th>
+                  <td>
+                    <span class="text-danger">
+                      <i class="fas fa-caret-down me-1"></i><span>-17,654</span>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="text-success">
+                      <i class="fas fa-caret-up me-1"></i><span>28</span>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="text-success">
+                      <i class="fas fa-caret-up me-1"></i><span>111</span>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="text-success">
+                      <i class="fas fa-caret-up me-1"></i><span>$1,092.72</span>
+                    </span>
+                  </td>
+                  <td>
+                    <span class="text-danger">
+                      <i class="fas fa-caret-down me-1"></i><span>$-1.78</span>
+                    </span>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+  
+      <div class="row">
+        <div class="col-md-5 mb-4">
+          <div class="card">
+            <div class="card-header text-center border-0 bg-light py-3">
+              <strong>Shopping Funnel</strong>
+            </div>
+            <div class="card-body">
+              <div id="chart-shopping-funnel"></div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-7">
+          <div class="card">
+            <div class="card-body">
+              <div id="chart-product-revenue"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    <!--Section: Design Block-->
+  
+  </div>
+  <!-- Container for demo purpose -->
