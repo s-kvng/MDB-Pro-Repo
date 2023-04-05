@@ -1,0 +1,20 @@
+<!-- Initial Value
+You can set initial tags with js options. -->
+
+<div class="chips-test chips-initial"></div>
+
+
+<script>
+    
+    const chipsInitialNew = document.querySelector('.chips-test')
+
+const newChipsNew = new mdb.ChipsInput(chipsInitialNew, {
+  initialValues: [
+    { tag: 'MDBReact' },
+    { tag: 'MDBAngular' },
+    { tag: 'MDBVue' },
+    { tag: 'MDB5' },
+    { tag: 'MDB' }
+  ]
+})
+</script>
